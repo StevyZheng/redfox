@@ -8,6 +8,15 @@ from . import *
 from os.path import join as pjoin
 
 RF_LOG_DIR = "/var/log/redfox"
+RF_CONF_DIR = "/etc/redfox"
+
+if not os.path.exists(RF_LOG_DIR):
+	os.mkdir(RF_LOG_DIR)
+if not os.path.exists(RF_CONF_DIR):
+	os.mkdir(RF_CONF_DIR)
+
+RF_DISKINFO_FILE = pjoin(RF_CONF_DIR, "disk_info.json")
+
 RF_LOG_FILEL = os.path.join(RF_LOG_DIR, "redfox.log")
 RF_LOG_FORMAT = '%(asctime)s [%(name)s][%(process)d] %(levelname)s: %(message)s'
 RF_LOG_LEVEL = logging.WARNING

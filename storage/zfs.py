@@ -10,7 +10,7 @@ class Zpool(object):
 		pass
 	
 	def list(self):
-		pass
+		print(exec_shell("zpool list"))
 	
 	def status(self):
 		pass
